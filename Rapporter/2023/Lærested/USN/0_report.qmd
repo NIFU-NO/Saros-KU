@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: USN
+title: USN
+---
+
+{{< include ../_0_report.qmd >}}
+

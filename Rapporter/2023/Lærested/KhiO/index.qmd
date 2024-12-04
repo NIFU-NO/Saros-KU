@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: KhiO
+title: KhiO
+---
+
+{{< include ../_index.qmd >}}
+

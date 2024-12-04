@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: NLA
+title: NLA
+---
+
+{{< include ../_0_report.qmd >}}
+

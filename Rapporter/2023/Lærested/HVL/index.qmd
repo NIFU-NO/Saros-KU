@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: HVL
+title: HVL
+---
+
+{{< include ../_index.qmd >}}
+

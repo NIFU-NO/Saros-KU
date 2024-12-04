@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: HiØ
+title: HiØ
+---
+
+{{< include ../_0_report.qmd >}}
+

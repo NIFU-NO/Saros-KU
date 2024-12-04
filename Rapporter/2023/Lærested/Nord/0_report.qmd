@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: Nord
+title: Nord
+---
+
+{{< include ../_0_report.qmd >}}
+

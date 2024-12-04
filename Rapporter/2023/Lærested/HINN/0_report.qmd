@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: HINN
+title: HINN
+---
+
+{{< include ../_0_report.qmd >}}
+

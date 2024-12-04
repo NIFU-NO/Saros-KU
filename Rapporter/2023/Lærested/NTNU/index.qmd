@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: NTNU
+title: NTNU
+---
+
+{{< include ../_index.qmd >}}
+

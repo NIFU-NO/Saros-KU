@@ -1,0 +1,31 @@
+---
+format: html
+number-sections: false
+params:
+  mesos_var: ~
+  mesos_group: ~
+
+---
+
+
+## Definisjoner
+
+Arbeidsledighet
+
+:   Andel arbeidsledige av arbeidsstyrken
+
+Overutdanning (vertikal mistilpasning)
+
+:   å ha en hovedjobb der det mest passende utdanningsnivået er lavere enn eget utdanningsnivå
+
+Innholdsmisforhold (horisontal mistilpasning)
+
+:   å ha en jobb som passer dårlig med innholdet i utdanningen
+
+For nærmere informasjon, se [Dokumentasjon av data fra Kandidatundersøkelsen 2023: Spørreundersøkelse til personer som ble uteksaminert med mastergrad våren 2023 (unit.no)](https://nifu.brage.unit.no/nifu-xmlui/bitstream/handle/11250/3127479/NIFUarbeidsnotat2024-9.pdf?sequence=1&isAllowed=y "https://nifu.brage.unit.no/nifu-xmlui/bitstream/handle/11250/3127479/nifuarbeidsnotat2024-9.pdf?sequence=1&isallowed=y")
+
+## To måter å lese rapporten på
+1.    Du kan lese rapporten interaktivt fordelt på kapitler på venstre side. Da får du hyperlenker, og mulighet til å referere til et spesifikt avsnitt som en URL.
+2.    Du kan noen steder kunne finne Word (DOCX)- og PDF-filer, men disse er eksperimentelle, foreløpig ikke like pene som HTML-sidene, og vil aldri tilby interaktiviteten som nettstedet tilbyr. Det vil oftest bli penere å skrive ut nettsidene som PDF enn å laste ned PDF-filene.
+-	[(PDF)](0_report.pdf)
+-	[(DOCX)](0_report.docx)

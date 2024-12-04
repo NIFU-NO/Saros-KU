@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: UiS
+title: UiS
+---
+
+{{< include ../_index.qmd >}}
+

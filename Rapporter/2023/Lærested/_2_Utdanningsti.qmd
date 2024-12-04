@@ -1,0 +1,350 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+number-offset: 1.0
+title: Utdanningstilfredshet
+---
+# Utdanningstilfredshet
+```{r}
+#| label: 'Import data for 2_Utdanningsti'
+data_2_Utdanningsti <- qs::qread('../data_2_Utdanningsti.qs')
+```
+```{r}
+source('../../general_formatting.R')
+```
+
+## Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med …{#sec-Hvis-du-skal-gi-en-samlet-vurdering-hvor-fornoyd-vil-du-da-si-at-du-har-vart-med--96}
+
+
+
+::: {#fig-utdanningstilfredshet-svurd-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <-
+	saros.contents::makeme(data = data_2_Utdanningsti,
+	dep = c(samlvurd_1,samlvurd_2,spesvurd_1,spesvurd_2,spesvurd_3,spesvurd_4),
+	type='cat_plot_html',
+	crowd=c('target', 'others'),
+	mesos_var = params$mesos_var,
+	mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`{r} x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med …_.
+
+:::
+
+
+
+### Fagfelt{#sec-Fagfelt-51}
+
+
+
+::: {#fig-utdanningstilfredshet-svurd-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <-
+	saros.contents::makeme(data = data_2_Utdanningsti,
+		dep = c(samlvurd_1),
+		indep = c(fagfelt),
+		type='cat_plot_html',
+		crowd=c('target', 'others'),
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med - Utdanningen du tok?_ etter _fagfelt_.
+
+:::
+
+::: {#fig-utdanningstilfredshet-svurd-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <-
+	saros.contents::makeme(data = data_2_Utdanningsti,
+		dep = c(samlvurd_2),
+		indep = c(fagfelt),
+		type='cat_plot_html',
+		crowd=c('target', 'others'),
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med høgskolen/universitetet du har tatt mastergraden ved?_ etter _fagfelt_.
+
+:::
+
+::: {#fig-utdanningstilfredshet-svurd-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <-
+	saros.contents::makeme(data = data_2_Utdanningsti,
+		dep = c(spesvurd_1),
+		indep = c(fagfelt),
+		type='cat_plot_html',
+		crowd=c('target', 'others'),
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med studiets faglige innhold?_ etter _fagfelt_.
+
+:::
+
+::: {#fig-utdanningstilfredshet-svurd-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <-
+	saros.contents::makeme(data = data_2_Utdanningsti,
+		dep = c(spesvurd_2),
+		indep = c(fagfelt),
+		type='cat_plot_html',
+		crowd=c('target', 'others'),
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med undervisningskvaliteten?_ etter _fagfelt_.
+
+:::
+
+::: {#fig-utdanningstilfredshet-svurd-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <-
+	saros.contents::makeme(data = data_2_Utdanningsti,
+		dep = c(spesvurd_3),
+		indep = c(fagfelt),
+		type='cat_plot_html',
+		crowd=c('target', 'others'),
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med tilbakemelding/veiledning fra undervisningspersonalet_ etter _fagfelt_.
+
+:::
+
+::: {#fig-utdanningstilfredshet-svurd-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <-
+	saros.contents::makeme(data = data_2_Utdanningsti,
+		dep = c(spesvurd_4),
+		indep = c(fagfelt),
+		type='cat_plot_html',
+		crowd=c('target', 'others'),
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var,
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvis du skal gi en samlet vurdering, hvor fornøyd vil du da si at du har vært med studiets relevans for arbeidslivet?…_ etter _fagfelt_.
+
+:::

@@ -1,0 +1,8 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: UiB
+---
+
+{{< include ../_2_Utdanningsti.qmd >}}
+

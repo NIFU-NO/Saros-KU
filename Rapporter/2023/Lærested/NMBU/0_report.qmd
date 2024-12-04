@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: NMBU
+title: NMBU
+---
+
+{{< include ../_0_report.qmd >}}
+

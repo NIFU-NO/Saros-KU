@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: NHH
+title: NHH
+---
+
+{{< include ../_0_report.qmd >}}
+

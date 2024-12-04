@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: Kristiania
+title: Kristiania
+---
+
+{{< include ../_0_report.qmd >}}
+

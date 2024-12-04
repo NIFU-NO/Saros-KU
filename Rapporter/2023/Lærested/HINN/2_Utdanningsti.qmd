@@ -1,0 +1,8 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: HINN
+---
+
+{{< include ../_2_Utdanningsti.qmd >}}
+

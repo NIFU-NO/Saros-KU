@@ -1,0 +1,9 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: UiA
+title: UiA
+---
+
+{{< include ../_0_report.qmd >}}
+

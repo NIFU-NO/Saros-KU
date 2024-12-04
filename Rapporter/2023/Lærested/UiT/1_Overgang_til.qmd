@@ -1,0 +1,8 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: UiT
+---
+
+{{< include ../_1_Overgang_til.qmd >}}
+

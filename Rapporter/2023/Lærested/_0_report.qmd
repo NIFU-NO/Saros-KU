@@ -1,0 +1,33 @@
+---
+date: '`r Sys.Date()`'
+date-format: DD.MM.YYYY
+report_no: ''
+preface: Dette er en institusjonsspesifikk rapport fra Kandidatundersøkelsen.
+abstract: ''
+isbn: 978-82-327-0607-5
+signer_1: Jannecke Wiers-Jenssen
+signer_1_title: Forskningsleder
+signer_2: Vibeke Opheim
+signer_2_title: Direktør
+figure_table: true
+table_table: true
+report_type: rapport
+sidebar: false
+format:
+  nifu_pub-typst:
+    fig-height: 5.5
+  nifudocx-docx:
+    number-sections: false
+    fig-height: 5.5
+
+---
+
+
+```{r}
+#| results: asis
+fs::dir_ls(path = "..", regexp = "\\.qmd", recurse = FALSE, type = "file") |>
+  grep(x=_, pattern = "index\\.qmd|0_report\\.qmd|_arkiv", value=TRUE, invert=TRUE) |>
+  lapply(X=_, FUN = function(x) knitr::knit_child(x, quiet=FALSE)) |>
+  unlist() |>
+  cat(sep = "\\n")
+```

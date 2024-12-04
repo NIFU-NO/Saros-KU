@@ -1,0 +1,418 @@
+---
+format:
+  html: default
+execute:
+  echo: false
+  warning: false
+  message: false
+  cache: false
+toc: true
+toc-depth: 4
+quarto-required: '>= 1.5'
+crossref:
+  fig-title: '**Figur**'
+  tbl-title: '**Tabell**'
+  title-delim: '**.**'
+  fig-prefix: figur
+  tbl-prefix: tabell
+lang: nb
+number-sections: true
+number-depth: 3
+df-print: kable
+fig-dpi: 900
+number-offset: 0.0
+title: Overgang til arbeidsmarkedet
+---
+# Overgang til arbeidsmarkedet
+```{r}
+#| label: 'Import data for 1_Overgang_til'
+data_1_Overgang_til <- qs::qread('../data_1_Overgang_til.qs')
+```
+```{r}
+source('../../general_formatting.R')
+```
+
+## Hvilket utdanningsnivå føler du er mest passende for denne jobben?{#sec-Hvilket-utdanningsniva-foler-du-er-mest-passende-for-denne-jobben--50}
+
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-arbniva-21-23-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+	dep = c(arbniva_21_23), 
+	type='cat_plot_html', 
+	crowd=c('target', 'others'), 
+	mesos_var = params$mesos_var, 
+	mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvilket utdanningsnivå føler du er mest passende for denne jobben?_.
+
+:::
+
+
+### Fagfelt{#sec-Fagfelt-77}
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-arbniva-21-23-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+		dep = c(arbniva_21_23), 
+		indep = c(fagfelt), 
+		type='cat_plot_html', 
+		crowd=c('target', 'others'), 
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var, 
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvilket utdanningsnivå føler du er mest passende for denne jobben?_ etter _fagfelt_.
+
+:::
+
+
+
+## Hvordan synes du innholdet i utdanningen du avsluttet våren 2023 passer med arbeidsoppgavene i denne jobben?{#sec-Hvordan-synes-du-innholdet-i-utdanningen-du-avsluttet-varen-2023-passer-med-arbeidsoppgavene-i-denne-jobben--63}
+
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-horisontalt-samsvar-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+	dep = c(horisontalt_samsvar), 
+	type='cat_plot_html', 
+	crowd=c('target', 'others'), 
+	mesos_var = params$mesos_var, 
+	mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvordan synes du innholdet i utdanningen du avsluttet våren 2023 passer med arbeidsoppgavene i denne jobben?_.
+
+:::
+
+
+### Fagfelt{#sec-Fagfelt-13}
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-horisontalt-samsvar-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+		dep = c(horisontalt_samsvar), 
+		indep = c(fagfelt), 
+		type='cat_plot_html', 
+		crowd=c('target', 'others'), 
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var, 
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Hvordan synes du innholdet i utdanningen du avsluttet våren 2023 passer med arbeidsoppgavene i denne jobben?_ etter _fagfelt_.
+
+:::
+
+
+## I hvilken grad får du utnyttet dine kunnskaper og ferdigheter i denne jobben?{#sec-I-hvilken-grad-far-du-utnyttet-dine-kunnskaper-og-ferdigheter-i-denne-jobben--34}
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-utnyttel-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+	dep = c(utnyttel), 
+	type='cat_plot_html', 
+	crowd=c('target', 'others'), 
+	mesos_var = params$mesos_var, 
+	mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_I hvilken grad får du utnyttet dine kunnskaper og ferdigheter i denne jobben?_.
+
+:::
+
+
+### Fagfelt{#sec-Fagfelt-24}
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-utnyttel-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+		dep = c(utnyttel), 
+		indep = c(fagfelt), 
+		type='cat_plot_html', 
+		crowd=c('target', 'others'), 
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var, 
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_I hvilken grad får du utnyttet dine kunnskaper og ferdigheter i denne jobben?_ etter _fagfelt_.
+
+:::
+
+
+
+## Sysselsetting{#sec-Sysselsetting-62}
+
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-sysselsatt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+	dep = c(sysselsatt), 
+	type='cat_plot_html', 
+	crowd=c('target', 'others'), 
+	mesos_var = params$mesos_var, 
+	mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Sysselsetting_.
+
+:::
+
+
+### Fagfelt{#sec-Fagfelt-07}
+
+
+::: {#fig-overgang-til-arbeidsmarkedet-sysselsatt-fagfelt-cat-plot-html}
+
+```{r}
+#| output: asis
+#| panel: tabset
+plots <- 
+	saros.contents::makeme(data = data_1_Overgang_til, 
+		dep = c(sysselsatt), 
+		indep = c(fagfelt), 
+		type='cat_plot_html', 
+		crowd=c('target', 'others'), 
+		hide_for_all_crowds_if_hidden_for_crowd = "target",
+		mesos_var = params$mesos_var, 
+		mesos_group = params$mesos_group)
+if(!all(sapply(plots, is.null))) {
+lapply(names(plots), function(.x) {
+  knitr::knit_child(text = c(
+    '##### `r .x`',
+    '```{r}',
+    'library(saros.contents)',
+    'knitr::opts_template$set(fig = list(fig.height = fig_height_h_barchart2(plots[[.x]])))',
+    '```',
+    '',
+    '```{r, opts.label="fig"}',
+    'library(ggplot2)',
+    'library(ggiraph)',
+    'nrange <- n_range2(plots[[.x]])',
+    'link <- make_link(data = plots[[.x]]$data)',
+    'link_plot <- make_link(data = girafe(plots[[.x]], interactive=FALSE), link_prefix=\'[PNG](\', file_suffix = \'.png\', save_fn = ggsaver)',
+    'x <- if(!is.null(nrange) || !is.null(link) || !is.null(link_plot)) I(paste0(\'N = \', nrange, \', \', link, \', \', link_plot))',
+    'girafe(ggobj = plots[[.x]])',
+    '```',
+    '',
+    '`r x`',
+    ''
+    ), envir = environment(), quiet = TRUE)
+}) |> unlist() |> cat(sep = '\n')
+}
+```
+
+_Sysselsetting_ etter _fagfelt_.
+
+:::
+

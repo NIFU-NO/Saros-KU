@@ -1,0 +1,8 @@
+---
+params:
+  mesos_var: skole
+  mesos_group: NTNU
+---
+
+{{< include ../_1_Overgang_til.qmd >}}
+
