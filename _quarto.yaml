@@ -1,0 +1,27 @@
+project:
+  type: website
+  output-dir: "_site"
+
+## NB: Folder and file names are case-sensitive!
+
+website:
+  title: "Kandidatundersøkelsene: Halvtårsundersøkelsen"
+  navbar:
+    logo: "https://www.nifu.no/wp-content/uploads/logo_hvit.png"
+    # left:
+      # - sidebar:Rapporter
+  sidebar:
+    contents: auto
+    # - id: Rapporter
+#      title: "Rapporter"
+      
+project_no: "21395-1"
+funder: "Direktoratet for høyere utdanning og kompetanse (HK-dir)"
+funder_address: "Fortunen 1, 5013 Bergen"
+
+execute:
+  freeze: true
+  cache: false
+
+metadata-files:
+  - _global.yaml # Must be in same folder/subfolder

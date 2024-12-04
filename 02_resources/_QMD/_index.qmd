@@ -1,0 +1,35 @@
+---
+format: html
+title: "Rapporter"
+number-sections: false
+---
+
+Velkommen til Deltakerundersøkelsenes interaktive rapporteringer.
+
+[Rapporteringene på lærestedsnivå](Rapporter/index.qmd) står oppført under det året dataene ble innsamlet.
+
+Den nasjonale kandidatundersøkelsen gjennomføres av NIFU på vegne av [Direktoratet for høyere utdanning og kompetanse (HK-dir)](https://www.hkdir.no). Annethvert år gjennomføres undersøkelsen blant kandidater med mastergrad eller tilsvarende fra norske læresteder.
+
+## Definisjoner
+
+Fagfelt, lærested og anonymitet
+
+:   Noen fagfelt-skole kombinasjoner gir færre enn 20 respondenter. Av personvernhensyn skjules disse fra visningene. Dette kan ofte gjelde de to fagfeltene Medisin, og Sikkerhet og samferdselsfag.
+
+Arbeidsledighet
+
+:   Andel arbeidsledige av arbeidsstyrken
+
+Overutdanning (vertikal mistilpasning)
+
+:   å ha en hovedjobb der det mest passende utdanningsnivået er lavere enn eget utdanningsnivå
+
+Innholdsmisforhold (horisontal mistilpasning)
+
+:   å ha en jobb som passer dårlig med innholdet i utdanningen
+
+For nærmere informasjon, se [Dokumentasjon av data fra Kandidatundersøkelsen 2023: Spørreundersøkelse til personer som ble uteksaminert med mastergrad våren 2023 (unit.no)](https://nifu.brage.unit.no/nifu-xmlui/bitstream/handle/11250/3127479/NIFUarbeidsnotat2024-9.pdf?sequence=1&isAllowed=y "https://nifu.brage.unit.no/nifu-xmlui/bitstream/handle/11250/3127479/nifuarbeidsnotat2024-9.pdf?sequence=1&isallowed=y")
+
+## Tilbakemeldinger
+
+Vi ønsker oss tilbakemeldinger på sidene, både positive og konstruktive. Send gjerne en epost til [ku\@nifu.no](mailto:ku@nifu.no) om hva som kunne gjort rapporteringene enda litt bedre, eller om det er noe du ikke får til.
