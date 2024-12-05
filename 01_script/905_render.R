@@ -1,4 +1,3 @@
-## Post-PISVEEP (rendering of website and report PDF)
 ### Render
 withr::with_envvar(new = c(LC_ALL="C"),
                    action = "replace",
@@ -6,12 +5,16 @@ withr::with_envvar(new = c(LC_ALL="C"),
                      system.time(
                        quarto::quarto_render(
                          input = if(is.null(paths$site)) cli::cli_abort("paths$site is NULL") else paths$site,
-                         as_job = F,
+                         as_job = FALSE, # IF true will continue with the next commands without this being completed
                          output_format = c("all")
                        )
                      )
                    })
 
-## Post-processing: Remove unnecessary sidebar items
-# Experimental, take a copy of _site first!
-saros.utils::remove_reports_from_sidebars(path = fs::path(paths$site, "_site"))
+# Take a temporary backup in case post-processing fails
+fs::dir_copy(path = paths$local_basepath,
+             new_path = paste0(paths$local_basepath, "_orig_", Sys.Date()))
+
+#### Post-processing HTML-files: replacing link to 0_report.pdf with index.html ####
+saros.base::remove_element_from_sidebar(path = paths$local_basepath,
+                                        filename_as_regex = c("report\\.pdf", "report\\.docx"))
